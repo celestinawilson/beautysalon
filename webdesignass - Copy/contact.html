@@ -1,0 +1,251 @@
+<html>
+<head><title>parlour</title><style>
+
+
+
+h2
+{   font-size:20px;
+    color:white;
+}
+    h1{
+        color: deeppink;
+    }
+a
+{
+  text-decoration:none;
+}
+a
+{
+  text-decoration:none;
+   text-decoration-color: darkviolet;
+    color:white;
+    float:inherit;
+    margin-top: -20px;
+    font-size:20px;
+}    
+    .d1{
+    align-content: center;
+        align-items:center;
+        
+    }   
+    .center {
+    
+    align-items: center;
+   align-content: center;
+    text-align: center;
+        
+    }
+    .s1{
+        margin:10px;
+        padding:10px:
+    }
+    body{
+        background-color:purple;
+    }
+    .s2{
+        margin-top:-50px;
+        border-top: -50px;
+        margin:10px;
+        padding:10px;
+        background-color: blueviolet;
+        float:right;
+        height:60%;
+        width:30%;
+    }
+    aside{
+        float:right;
+        margin:10px;
+        padding:10px;
+        background-color: orange;
+        height:60%;
+        width:60%;
+    }
+    p{
+        color:red;
+    }
+    
+</style>
+</head>
+<body>
+<div  align="center">
+<section>
+<img src="im2.png"  style="height: 80px;" width="250px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+</section>    
+    <br>
+<nav>
+    
+       
+<a href="webdesignnew1.html"><i>|HOME</i></a>
+<a href="about.html"><i>|ABOUT US|</i></a>
+<a href="webdesignnew2.html"><i>SERVICES|</i></a>
+<a href="webdesignnew3.html"><i>BRIDAL|</i></a>
+<a href="login.html"><i>APPOINTMENT|</i></a>
+<a href="contact.html"><i>CONTACT|</i></a>    
+</nav> </div><br>
+
+    <section class="s1" >
+<div class="center">
+    <center>
+         <img src="im12.png" height="50%" width="95%" align="center">
+    </center>
+  
+</div>
+    </section>
+    
+
+    <section class="s2">
+        <div>
+       <center>
+    <h1>
+        CORPORATE ADDRESS</h1><br>
+<h2> Beauty Trends,<br>
+
+ CavinKare Private Limited - Trends Division,<br>
+
+No. 12, 4th Floor, Cavinville,<br>
+
+Cenotaph Road,<br>
+
+Chennai - 600 018,<br>
+
+Phone: 044 - 66317569<br>
+
+(Mon-Fri : 9am-6pm)
+    </h2></center> 
+        </div>
+    </section>
+    
+    
+        <aside><center>
+            <form  onsubmit="return check_validation2(this);" >
+        <h2>Send Us An Instant Message</h2>  
+        <table>
+            <tr> <td> NAME:&nbsp;&nbsp;&nbsp;<input type="text" id="cname" placeholder="Name" pattern="[a-zA-Z]*" required ></td><td> <p id="e1" ></p>  
+                </td>
+                 </tr>    
+          <tr><td>SELECT:&nbsp;&nbsp;<select id="cselect" required >
+<option value="Customer feedback">Customer feedback</option>
+<option value="Career">Career</option>
+<option value="Other enquiries">Other enquiries</option>
+              </select>
+                </td>
+              <td><p id="e2" ></p>
+              </td>
+                </tr>
+            <tr><td> EMAIL:&nbsp;&nbsp;&nbsp;<input type="email" id="cmail" placeholder="Email" required > </td>
+            <td>
+                <p id="e3" ></p>
+            </td>
+            </tr>
+               
+                <tr><td> MOBILE:&nbsp;<input type="text" id="cmobile" placeholder="Mobile" pattern="[0-9]{10}" required ></td>
+               <td>
+                   <p id="e4" ></p>
+                
+                </td>
+               </tr>
+                
+                 
+                 <tr>
+                     <td>
+                      <textarea rows="5" cols="35" name="address"  placeholder="MESSAGE" required>
+</textarea> 
+                     </td>
+                     <td>
+                     <p id="e5" ></p>
+                     </td>
+               </tr>
+                       
+        </table> 
+                <button  id="cbtn"  style="background-color: brown; color: white;">Send</button>
+            
+        
+    </form></center>
+    </aside>
+    
+    <script>
+     var btn2=document.getElementById('cbtn');
+          btn2.onclick=function(e){
+              check_validation2();
+          }
+           function check_validation2(){  
+            var cname=document.getElementById('cname');
+            var cselect=document.getElementById('cselect');
+            var cemail=document.getElementById('cmail');
+            var cmobile=document.getElementById('cmobile');   
+            var cmge=document.getElementById('cmge');     
+                 
+               
+            //document.getElementById("err2").innerHTML="";  
+               
+             if(cname.validity.valueMissing)
+              {
+                  document.getElementById("e1").innerHTML=cname.validationMessage;
+              }   
+              else if(cname.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("e1").innerHTML="Invalid Name";   
+              }
+              else{
+                  //console.log("right");
+                   document.getElementById("e1").innerHTML=" ";   
+              }
+                             
+             if(cselect.checkValidity)
+              {
+                  console.log("required");
+                  document.getElementById("e2").innerHTML=cselect.validationMessage;
+              }
+            else
+              {
+                  console.log("required");
+                  document.getElementById("e2").innerHTML=" ";
+              }
+               
+               
+               
+               
+            if(cemail.checkValidity)
+              {
+                  console.log("required");
+                  document.getElementById("e3").innerHTML=cemail.validationMessage;
+              }
+                else{
+                  console.log("right");
+                  document.getElementById("e3").innerHTML=" ";   
+              }
+               
+               
+                 
+             if(cmobile.validity.valueMissing)
+              {
+                  document.getElementById("e4").innerHTML=cmobile.validationMessage;
+              }   
+              else if(cmobile.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("e4").innerHTML="Accepts only 10 digits";   
+              }
+              else{
+                  //console.log("right");
+                   document.getElementById("e4").innerHTML=" ";   
+              }
+               
+            
+              if(cmge.checkValidity)
+              {
+                  document.getElementById("e5").innerHTML=cmge.validationMessage;
+              }
+               else
+              {
+                  document.getElementById("e5").innerHTML=" ";
+              }
+               
+             
+                return true;
+           
+           }
+</script>
+
+    
+</body>
+</html>

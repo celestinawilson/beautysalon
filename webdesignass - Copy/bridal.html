@@ -1,0 +1,213 @@
+<html>
+<head>
+<title>webdesignnew4</title>
+<style>
+
+body
+{ background-image:url('images103.jpg');
+  background-repeat:no-repeat;
+  background-size:1400px 700px;
+  background-position:left;
+
+}
+a
+{
+  text-decoration:none;
+   text-decoration-color: darkviolet;
+    color:white;
+    float:inherit;
+    margin-top: -20px;
+    font-size:20px;
+}    
+div
+{   font-size:30px;
+}
+
+input ,select,textarea
+{
+width:25%;
+}
+.g
+{ width:10%;}
+    
+    p{
+        color:red;
+    }    
+</style>
+
+
+
+
+
+</head>
+<body bgcolor="purple" >
+<div  align="center">
+<section style='background-color: purple' >
+<img src="im2.png" style="height: 90px;" width="250px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+    
+</section>    
+    
+</div>
+    
+<form  align="center"   onsubmit=" return check_validation4(this)">
+    <h3 style="color:purple;" align="center">BOOK AN APPOINTMENT </h3>
+<table align="center">
+<tr>
+    <td>NAME</td>
+<td>
+   <input type="text"  id="aname" placeholder="NAME" pattern="[a-zA-Z]*" title="Please enter on alphabets only" required><br>
+</td> 
+<td>
+    <p id="e1" ></p>
+</td>
+</tr>  
+
+    
+<tr>
+    <td>LOCATION</td>
+<td>
+    <textarea rows="5" cols="80" id="aadd"   placeholder="LOCATION" required>
+</textarea> 
+<br>
+</td>   
+    <td>
+        <p id="e3"></p>
+    </td>
+</tr> 
+<tr>
+        <td>EMAIL ID</td>
+    <td>
+      <input type="email" id="aemail" placeholder="EMAIL ADDRESS" required><br> 
+    </td><td><p id="e6"></p></td>
+    </tr>
+    <tr>
+        <td>MOBILE NUMBER</td>
+    <td>
+        <input type="text" id="acontact"  maxlength="10" placeholder="PHONE NO" pattern="[0-9]{10}" title="Please Enter 10 Digits Number"  required><br>
+    </td><td><p id="e7"></p></td>    
+    </tr>
+    <tr>
+        <td>WEDDING/ENGAGEMENT DATE<br>
+        <td><input type="date" id="adate" id="theDate" onclick="newDate()"  required><br>
+        </td>
+        <td><p id="e8"></p></td>
+    </tr>
+   
+</table>    
+
+ 
+
+
+
+
+
+  
+
+<center>
+    <input type="submit" id="abtn" value="BOOK IT" style="color:deeppink;">
+    <button type="submit" style="width:60px; height:30px; background-color: purple; color: white;" onclick=window.location.href="app.html">Cancel</button>
+    
+</center>
+
+
+                                                       
+</form>
+    
+   
+   <script>
+     var btn3=document.getElementById('abtn');
+          btn3.onclick=function(e){
+              check_validation4();
+          }
+           function check_validation4(){  
+            var aname=document.getElementById('aname');
+           
+            var aadd=document.getElementById('aadd');
+           
+             var aemail=document.getElementById('aemail');
+             var acontact=document.getElementById('acontact');
+             var adate=document.getElementById('adate'); 
+                 
+               
+            //document.getElementById("err2").innerHTML="";  
+               
+             if(aname.validity.valueMissing)
+              {
+                  document.getElementById("e1").innerHTML=aname.validationMessage;
+              }   
+              else if(aname.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("e1").innerHTML="Invalid Name";   
+              }
+              else{
+                  //console.log("right");
+                   document.getElementById("e1").innerHTML=" ";   
+              }
+               
+               
+                             
+            
+               
+                                
+             if(aadd.checkValidity)
+              {
+                  console.log("required");
+                  document.getElementById("e3").innerHTML=aadd.validationMessage;
+              }
+            else
+              {
+                  console.log("required");
+                  document.getElementById("e3").innerHTML=" ";
+              }
+               
+           
+             
+               
+               
+               
+               
+            if(aemail.checkValidity)
+              {
+                  console.log("required");
+                  document.getElementById("e6").innerHTML=aemail.validationMessage;
+              }
+                else{
+                  console.log("right");
+                  document.getElementById("e6").innerHTML=" ";   
+              }
+               
+               
+               
+                 
+             if(acontact.validity.valueMissing)
+              {
+                  document.getElementById("e7").innerHTML=acontact.validationMessage;
+              }   
+              else if(acontact.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("e7").innerHTML="Accepts only 10 digits";   
+              }
+              else{
+                  //console.log("right");
+                   document.getElementById("e7").innerHTML=" ";   
+              }
+               
+            
+              if(adate.checkValidity)
+              {
+                  document.getElementById("e8").innerHTML=adate.validationMessage;
+              }
+               else
+              {
+                  document.getElementById("e8").innerHTML=" ";
+              }
+               
+             
+                return true;
+           
+           }
+</script> 
+    
+    
+</body>
+</html>

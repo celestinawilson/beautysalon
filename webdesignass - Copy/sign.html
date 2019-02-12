@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  
+ 
+  /*display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+*/
+    }
+
+/* Set a style for all buttons */
+button {
+ 
+  color: white;
+  float:middle;
+  background-color: hotpink;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+a
+{
+  text-decoration:none;
+   text-decoration-color: darkviolet;
+    color:white;
+    float:inherit;
+    margin-top: -20px;
+    font-size:20px;
+}    
+    
+    .d1{
+        height:1000px;
+        width:600px;
+        align-content: center;
+        float:middle;
+        align-items: center;
+        align-self: center;
+    }
+/* The Modal (background) */
+    .im1{
+        align-content: center;
+        align-items: center;
+        float:middle;
+        
+    }
+    .s1{
+        float:middle;
+        align-self: center;
+        align-content: center;
+        align-items: center;
+    }
+    
+    .t1{
+        background-color:white;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+        float:middle;
+        width:750px;
+        height:400px;
+        background-blend-mode:color-burn;
+        color:deeppink;
+        
+        
+    }
+    .f1{
+        float:middle;
+    }
+    
+
+
+
+
+
+</style>
+</head>
+<body bgcolor="purple" >
+<div style='background-color: purple' align="center">
+<section>
+<img src="im2.png" style="height: 90px;" width="250px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+</section>    
+    <br>
+<nav>
+    
+       
+<a href="webdesignnew1.html"><i>|HOME</i></a>
+<a href="about.html"><i>|ABOUT US|</i></a>
+<a href="webdesignnew2.html"><i>SERVICES|</i></a>
+<a href="webdesignnew3.html"><i>BRIDAL|</i></a>
+
+<a href="contact.html"><i>CONTACT|</i></a>   
+</nav> </div>
+    <br>
+
+
+
+<div>
+  
+    
+  <form class="f1"  onsubmit="return check_validation1(this);" action="app.html" >
+    
+
+    <div >
+        
+        <table class="t1" align="center">
+              
+              
+                  
+                <tr>
+                     <td><center> <img src="im13.png"  alt="Avatar" style="height:90px; width=70px;"> </center> </td> 
+               </tr>
+               
+               <tr>
+                <td>
+                 <label for="uid"><b>Name</b></label>
+               </td>
+                <td><input type="text" placeholder="Enter Name" id="sname" pattern="[a-zA-Z]*"  required>
+                </td>
+                 <td>  <p id="err1"></p>
+                </td>
+              </tr>
+            
+               <tr>
+                <td>
+                 <label for="uname"><b>Email Address</b></label>
+               </td>
+                <td><input type="email" placeholder="Enter Email id" id="sid" required>
+                </td>
+                 <td>  <p id="err2"></p>
+                </td>
+              </tr>
+     
+              <tr><td>
+                  <label for="psw"><b>Password</b></label>
+                  </td>
+                  <td>
+                      <input type="password" placeholder="Enter Password" id="spsw" required>
+                  </td>
+                  <td>
+                       <p id="err3"></p>
+                  </td>
+              </tr>
+    
+              <tr align="center">
+                  <td>
+                       <button type="submit" id="btn1" style="width:70px; height:40px; align-content: center;">Sign Up</button>
+                  </td>
+              </tr>
+      
+     
+        
+            
+    </table>        
+     
+      
+    </div>
+      
+          <h2 align="center" style="color:white">Already have an account &nbsp;<a href=login.html style="color: firebrick">Login</a></h2>
+      
+    
+  </form>
+</div>
+<script>
+     var btn1=document.getElementById('btn1');
+          btn1.onclick=function(e){
+              check_validation1();
+          }
+           function check_validation1(){  
+            var name=document.getElementById('sname');
+            var pass=document.getElementById('spsw');
+            var name1=document.getElementById('sid');
+                 
+            document.getElementById("err2").innerHTML="";  
+             if(name.validity.valueMissing)
+              {
+                  document.getElementById("err1").innerHTML=name.validationMessage;
+              }   
+              else if(name.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("err1").innerHTML="Invalid Name";   
+              }
+              else{
+                  //console.log("right");
+                   document.getElementById("err1").innerHTML=" ";   
+              }
+                             
+               
+               
+               
+            if(name1.checkValidity)
+              {
+                  console.log("required");
+                  document.getElementById("err2").innerHTML=name1.validationMessage;
+              }
+                else{
+                  console.log("right");
+                  document.getElementById("err2").innerHTML=" ";   
+              }
+               
+               
+              if(pass.checkValidity)
+              {
+                  document.getElementById("err3").innerHTML=pass.validationMessage;
+              }
+			  else
+			  {
+				   document.getElementById("err3").innerHTML=" ";
+			  }
+             
+                return true;
+           /* window.location.href="app.html" */
+           }
+</script>
+
+
+</body>
+</html>
