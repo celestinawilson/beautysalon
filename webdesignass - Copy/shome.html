@@ -134,11 +134,11 @@ if (selectedValue == "SELECT SERVICE")
     <tr>
     <td>SELECT SERVICE</td>
 <td>
-    <input type="checkbox" id="aser" name="c1" onclick="validate()"  value="Manicure" required>Manicure<br>
-     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Pedicure" required>Pedicure<br>
-     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Facial" required>Facial<br>
-     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Waxing" required>Waxing<br>
-     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Threading" required>Threading<br>
+    <input type="checkbox" id="aser" name="c1" onclick="validate()"  value="Manicure" >Manicure<br>
+     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Pedicure" >Pedicure<br>
+     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Facial" >Facial<br>
+     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Waxing" >Waxing<br>
+     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Threading" >Threading<br>
 </td>
     <tr>
 <td>
@@ -213,7 +213,7 @@ if (selectedValue == "SELECT SERVICE")
             var aname=document.getElementById('aname');
             var acity=document.getElementById('acity');
             var aadd=document.getElementById('aadd');
-            var aser=document.getElementById('aser');   
+           
             var aslot=document.getElementById('aslot');
              var aemail=document.getElementById('aemail');
              var acontact=document.getElementById('acontact');
@@ -281,6 +281,10 @@ if (selectedValue == "SELECT SERVICE")
               {
                   console.log("required");
                   document.getElementById("e6").innerHTML=aemail.validationMessage;
+              }
+              else if(aemail.validity.patternMismatch){
+                  //console.log("wrong");
+               document.getElementById("e7").innerHTML="Accepts only 10 digits";   
               }
                 else{
                   console.log("right");
