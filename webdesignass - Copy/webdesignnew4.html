@@ -43,36 +43,18 @@ width:25%;
 
 <script type="text/javascript">
 
-    function validate()
-{
- var ddl = document.getElementById("serid");
+     var c1=document.getElementById('aser1');
+          c1.onclick=function(e){
+              f1();
+          }
+ function f1(){  
+ var ddl = document.getElementById("aser1");
  var selectedValue = ddl.value;
-    if (selectedValue == "facial")
+    if (selectedValue == "manicure")
    {
     document.getElementById("empid").value = "2000";
-    alert("Amount differs depending on the facial type")
-}
-if (selectedValue == "manicure")
-   {
-    document.getElementById("empid").value = "1500";
-   }
-if (selectedValue == "pedicure")
-   {
-    document.getElementById("empid").value = "2500";
-   }
-if (selectedValue == "waxing")
-   {
-    document.getElementById("empid").value = "3000";
-   }
-if (selectedValue == "threading")
-   {
-    document.getElementById("empid").value = "1000";
-   }
-
-
-
     }
-
+ }
 
 </script>
 
@@ -86,7 +68,7 @@ if (selectedValue == "threading")
     
 </div>
     
-<form  align="center"   onsubmit="return f1(); return check_validation2(this)">
+<form  align="center"   onsubmit="return f1(this); return check_validation2(this)">
     <h3 style="color:purple;" align="center">BOOK AN APPOINTMENT </h3>
 <table align="center">
 <tr>
@@ -129,11 +111,11 @@ if (selectedValue == "threading")
 <tr>
     <td>SELECT SERVICE</td>
 <td>
-    <input type="checkbox" id="aser" name="c1" onclick="validate()"  value="Manicure" >Manicure<br>
-     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Pedicure" >Pedicure<br>
-     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Facial" >Facial<br>
-     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Waxing" >Waxing<br>
-     <input type="checkbox" id="aser" name="c1" onclick="validate()" value="Threading" >Threading<br>
+    <input type="checkbox" id="aser1" name="c1"  value="Manicure" >Manicure<br>
+     <input type="checkbox" id="aser" name="c1"  value="Pedicure" >Pedicure<br>
+     <input type="checkbox" id="aser" name="c1"  value="Facial" >Facial<br>
+     <input type="checkbox" id="aser" name="c1"  value="Waxing" >Waxing<br>
+     <input type="checkbox" id="aser" name="c1"  value="Threading" >Threading<br>
 </td>
     <tr>
 <td>
